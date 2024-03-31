@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h3>Home.Html</h3>
+<a href="{% url 'logout' %}">Log Out</a>
+<p>Hello {{ user.username}}</p>
+<p>Your Email is {{ user.email }}</p>
+</body>
+</html>

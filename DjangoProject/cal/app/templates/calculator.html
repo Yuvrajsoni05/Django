@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+
+    <form method="post" action="{% url 'calculator' %}">
+        {% csrf_token %}
+        <label for="num1">Enter Number 1:</label>
+        <input type="text" name="num1" required>
+
+        <label for="num2">Enter Number 2:</label>
+        <input type="text" name="num2" required>
+
+        <br>
+
+        <label>Operation:</label>
+        <input type="radio" name="operation" value="addition" required> Addition
+        <input type="radio" name="operation" value="subtraction" required> Subtraction
+        <input type="radio" name="operation" value="multiplication" required> Multiplication
+        <input type="radio" name="operation" value="division" required> Division
+
+
+        <br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% endif %}
+
+<img src="{% static 'img/logo.png' %}" alt="My image">
+</body>
+</html>
