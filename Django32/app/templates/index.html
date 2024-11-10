@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="stylesheet" href="main.css">-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/main.css'%}" >
+    <title>Index</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container">
+            <!-- Navigation -->
+            <nav >
+                <img src="{% static 'Img/a1.jpg' %}" class="logo" alt="Its Logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Header Text -->
+            <div>
+                <div class="header-text">
+                    <p>My Name is Yuvraj Soni</p>
+                    <h1>I Am <span>Django</span> <br>Developer</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: User Image -->
+                <div class="about-col-1">
+                    <img src="{% static 'Img/a1.jpg' %}" alt="user img">
+                </div>
+                <!-- Column 2: About Me Content with Tabs -->
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me </h1>
+                    <!-- About Me Text -->
+                    <p>YUvraj Soni YUvraj SoniYUvraj SoniYUvraj SoniYUvraj Soni
+                    YUvraj SoniYUvraj SoniYUvraj SoniYUvraj SoniYUvraj Soni
+                    YUvraj SoniYUvraj SoniYUvraj SoniYUvraj SoniYUvraj SoniYUvraj SoniYUvraj
+                    YUvraj SoniYUvraj SoniYUvraj SoniYUvraj SoniYUvraj Soni</p>
+
+                    <!-- Tab Titles -->
+                    <div class="tab-title">
+                        <p class="tab-links active-link" data-tab="skills" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" data-tab="experience" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" data-tab="education" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!-- Tab Contents -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Developer </li>
+                            <li><span>Java</span><br>Developer </li>
+                            <li><span>App Developer</span><br>Developer </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021</span><br>Developer </li>
+                            <li><span>2022</span><br>Developer </li>
+                            <li><span>2023Developer</span><br>Developer </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>P2018</span><br>Developer </li>
+                            <li><span>11111</span><br>Developer </li>
+                            <li><span>54443</span><br>Developer </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- End About Section -->
+
+     <!--Serivece-->
+    <div class="cardconainer">
+
+        <div class="cardBox">
+            <img class="CardImg"   src="{% static 'Img/a1.jpg' %}" alt="CardImg">
+        </div>
+
+        <div class="cardBox">
+            <img class="CardImg"  src="{% static 'Img/a1.jpg' %}" alt="CardImg">
+        </div>
+
+        <div class="cardBox">
+            <img  class="CardImg"   src="{% static 'Img/a1.jpg' %}" alt="CardImg">
+        </div>
+
+    </div>
+
+     <!--End Serivece-->
+
+
+     <!--Portfolio -->
+    <div id="portfolio" >
+        <div class="container">
+            <h1 class="sub-title" >My Portfolio</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="{% static 'Img/work-1.png' %}" alt="Work Image">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>WHy WFDCDSVDSSFEFEFEFEFEfefefefeefefefefxz</p>
+                        <!-- <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="work">
+
+                    <img src="{% static 'Img/work-2.png' %}" alt="Work Image">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>WHy WFDCDSVDSSFEFEFEFEFEfefefefeefefefefxz</p>
+                        <!-- <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="{% static 'Img/work-3.png' %}" alt="Work Image">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>WHy WFDCDSVDSSFEFEFEFEFEfefefefeefefefefxz</p>
+                        <!-- <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+                    </div>
+                </div>
+
+            </div>
+            <a href="#" class="btn"> See More </a>
+        </div>
+    </div>
+
+
+
+     <!--End_Portfolio -->
+
+<!-- contact -->
+
+
+
+    <!-- JavaScript Section -->
+    <script>
+        // Get all tab links and tab contents
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        // Function to switch between tabs
+        function opentab(tabname) {
+            // Remove "active" class from all tab links
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active-link");
+            }
+
+            // Remove "active" class from all tab contents
+            for (let i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].classList.remove("active-tab");
+            }
+
+            // Add "active" class to the clicked tab link
+            document.querySelector(`.tab-links[data-tab="${tabname}"]`).classList.add("active-link");
+
+            // Add "active" class to the corresponding tab content
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
