@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Form</title>
+</head>
+<body>
+    <h1>Submit Example Model</h1>
+
+
+  <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price" required><br>
+
+        <label for="is_active">Is Active:</label>
+        <input type="checkbox" id="is_active" name="is_active"><br>
+
+        <label for="birth_date">Birth Date:</label>
+        <input type="date" id="birth_date" name="birth_date" required><br>
+
+        <label for="event_time">Event Time:</label>
+        <input type="time" id="event_time" name="event_time" required><br>
+
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="file"><br>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" required><br>
+
+        <label for="favorite_color">Favorite Color:</label><br>
+        <input type="radio" id="red" name="favorite_color" value="R">
+        <label for="red">Red</label><br>
+        <input type="radio" id="green" name="favorite_color" value="G">
+        <label for="green">Green</label><br>
+        <input type="radio" id="blue" name="favorite_color" value="B">
+        <label for="blue">Blue</label><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    {% if all %}
+    <hr>
+    <h2>Submitted Data:</h2>
+    {% for entry in all %}
+        <p><strong>Name:</strong> {{ entry.name }}</p>
+        <p><strong>Description:</strong> {{ entry.description }}</p>
+        <p><strong>Age:</strong> {{ entry.age }}</p>
+        <p><strong>Price:</strong> {{ entry.price }}</p>
+        <p><strong>Is Active:</strong> {{ entry.is_active }}</p>
+        <p><strong>Birth Date:</strong> {{ entry.birth_date }}</p>
+        <p><strong>Event Time:</strong> {{ entry.event_time }}</p>
+        <p><strong>Email:</strong> {{ entry.email }}</p>
+        <p><strong>Website:</strong> {{ entry.website }}</p>
+        <p><strong>Favorite Color:</strong> {{ entry.get_favorite_color_display }}</p>
+        <hr>
+    {% empty %}
+        <p>No data available.</p>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
